@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientific Calculator & Expression Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <h1>🧮 Scientific Calculator</h1>
+                <p>Expression Studio</p>
+            </div>
+
+            <button id="modeBtn" class="mode-btn">
+                DEG
+            </button>
+        </header>
+
+
+        <!-- MAIN SECTION -->
+        <main class="main-grid">
+
+            <!-- CALCULATOR -->
+            <section class="card calculator">
+
+                <h2>Calculator</h2>
+
+                <input
+                    type="text"
+                    id="display"
+                    placeholder="Enter expression..."
+                    autocomplete="off"
+                >
+
+                <div class="result-box">
+                    <span>Result</span>
+                    <strong id="result">0</strong>
+                </div>
+
+
+                <!-- SCIENTIFIC BUTTONS -->
+                <div class="scientific-buttons">
+
+                    <button data-value="sin(">sin</button>
+                    <button data-value="cos(">cos</button>
+                    <button data-value="tan(">tan</button>
+                    <button data-value="sqrt(">√</button>
+
+                    <button data-value="log(">log</button>
+                    <button data-value="ln(">ln</button>
+                    <button data-value="abs(">abs</button>
+                    <button data-value="^">xʸ</button>
+
+                </div>
+
+
+                <!-- CALCULATOR BUTTONS -->
+                <div class="calculator-buttons">
+
+                    <button class="clear" id="clearBtn">C</button>
+                    <button id="backspaceBtn">⌫</button>
+                    <button data-value="(">(</button>
+                    <button data-value=")">)</button>
+
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+                    <button data-value="9">9</button>
+                    <button data-value="/">÷</button>
+
+                    <button data-value="4">4</button>
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-value="*">×</button>
+
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-value="-">−</button>
+
+                    <button data-value="0">0</button>
+                    <button data-value=".">.</button>
+                    <button id="equalBtn" class="equals">=</button>
+                    <button data-value="+">+</button>
+
+                </div>
+
+            </section>
+
+
+            <!-- CUSTOM FUNCTION STUDIO -->
+            <section class="card function-studio">
+
+                <h2>🧩 Custom Function Studio</h2>
+
+                <input
+                    type="text"
+                    id="functionName"
+                    placeholder="Function name (example: square)"
+                >
+
+                <input
+                    type="text"
+                    id="functionParameter"
+                    placeholder="Parameter (example: x)"
+                    value="x"
+                >
+
+                <input
+                    type="text"
+                    id="functionExpression"
+                    placeholder="Expression (example: x*x)"
+                >
+
+                <button id="saveFunctionBtn" class="save-function">
+                    Save Function
+                </button>
+
+
+                <h3>My Functions</h3>
+
+                <div id="functionList" class="function-list">
+
+                    <p class="empty-message">
+                        No custom functions yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- HISTORY -->
+        <section class="card history-section">
+
+            <div class="section-header">
+
+                <h2>📚 Calculation History</h2>
+
+                <button id="clearHistoryBtn">
+                    Clear History
+                </button>
+
+            </div>
+
+            <div id="historyList" class="history-list">
+
+                <p class="empty-message">
+                    No calculations yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRAPH -->
+        <section class="card graph-section">
+
+            <div class="section-header">
+
+                <h2>📈 Expression Graph</h2>
+
+                <button id="plotBtn">
+                    Plot Graph
+                </button>
+
+            </div>
+
+            <div class="graph-controls">
+
+                <input
+                    type="text"
+                    id="graphExpression"
+                    placeholder="Example: x^2 + 2*x + 1"
+                >
+
+                <input
+                    type="number"
+                    id="graphScale"
+                    value="30"
+                    min="5"
+                    max="100"
+                >
+
+            </div>
+
+            <canvas id="graphCanvas"></canvas>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
